@@ -1,4 +1,4 @@
-class TutorialsController < ApplicationController
+class Admin::TutorialsController < ApplicationController
   # GET /tutorials
   # GET /tutorials.json
   def index
@@ -13,7 +13,7 @@ class TutorialsController < ApplicationController
   # GET /tutorials/1
   # GET /tutorials/1.json
   def show
-    @tutorial = Tutorial.find(params[:id])
+    @tutorial = Tutorial.find_by_slug(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb

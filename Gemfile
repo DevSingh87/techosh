@@ -5,7 +5,7 @@ gem 'rails', '3.2.18'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 group :development, :test do
- gem 'sqlite3'
+ gem 'mysql2', '0.3.11'
 end 
   
 group :production do 
@@ -41,3 +41,9 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+
+gem 'ckeditor'
+
+#image uploads
+gem 'carrierwave'
+gem 'cloudinary'

@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<div id="description">
+  <b>Title:</b>
+  <%= @tutorial.title %>
+</div>
+
+<div id="description">
+  <b>Description:</b>
+  <%= @tutorial.description.html_safe %>
+</div>
+
+
+ <td><%= link_to 'Edit', edit_admin_tutorial_path(@tutorial) %></td> |
+<%= link_to 'Back', admin_tutorials_path %>

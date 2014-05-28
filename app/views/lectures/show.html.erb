@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @tutorial.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @tutorial.description.html_safe %>
+</p>
+
+<%
+  meta_title "#{@tutorial.title} - MyCoolBlog"
+  meta_og_url request.original_url
+  
+%>
+
+<%= link_to 'Back', lectures_path %>
