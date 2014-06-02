@@ -1,4 +1,6 @@
 class Admin::TutorialsController < ApplicationController
+
+  @FRONTEND = 
   # GET /tutorials
   # GET /tutorials.json
   def index
@@ -13,7 +15,7 @@ class Admin::TutorialsController < ApplicationController
   # GET /tutorials/1
   # GET /tutorials/1.json
   def show
-    @tutorial = Tutorial.find_by_slug(params[:id])
+    @tutorial = Tutorial.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -25,7 +27,7 @@ class Admin::TutorialsController < ApplicationController
   # GET /tutorials/new.json
   def new
     @tutorial = Tutorial.new
-
+    @tutorial.images.build
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @tutorial }
@@ -44,7 +46,7 @@ class Admin::TutorialsController < ApplicationController
 
     respond_to do |format|
       if @tutorial.save
-        format.html { redirect_to @tutorial, notice: 'Tutorial was successfully created.' }
+        format.html { redirect_to [:admin, @tutorial], notice: 'Tutorial was successfully created.' }
         format.json { render json: @tutorial, status: :created, location: @tutorial }
       else
         format.html { render action: "new" }
@@ -60,7 +62,7 @@ class Admin::TutorialsController < ApplicationController
 
     respond_to do |format|
       if @tutorial.update_attributes(params[:tutorial])
-        format.html { redirect_to @tutorial, notice: 'Tutorial was successfully updated.' }
+        format.html { redirect_to [:admin, @tutorial], notice: 'Tutorial was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -76,7 +78,7 @@ class Admin::TutorialsController < ApplicationController
     @tutorial.destroy
 
     respond_to do |format|
-      format.html { redirect_to tutorials_url }
+      format.html { redirect_to admin_tutorials_url }
       format.json { head :no_content }
     end
   end

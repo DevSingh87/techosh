@@ -19,10 +19,12 @@
     <%= f.label :description %><br />
     <%= f.cktext_area :description, :ckeditor => {:uiColor => '#AADC6E', :toolbar => 'mini'} %>
   </div>
+ <%= f.fields_for :images do |bundler| %>
   <div class="field">
-  <%= f.label :image %>
-  <%= f.file_field :image %>
+    <%= bundler.label :image %><br>
+    <%= bundler.file_field :image %>
   </div>
+  <% end %>
   
   <div class="actions">
     <%= f.submit %>

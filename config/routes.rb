@@ -1,10 +1,14 @@
 Techosh::Application.routes.draw do
-  resources :images
+
+  
+
 
   resources :lectures
-  
-  namespace :admin do |admin|
-    resources :tutorials
+  namespace :admin do
+    resources :tutorials do 
+	  resources :videos
+	end
+	 
   end
 
   # The priority is based upon order of creation:

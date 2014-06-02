@@ -47,3 +47,5 @@ gem 'ckeditor'
 #image uploads
 gem 'carrierwave'
 gem 'cloudinary'
+
+gem 'friendly_id'

@@ -51,6 +51,8 @@ GEM
     coffee-script-source (1.7.0)
     erubis (2.7.0)
     execjs (2.0.2)
+    friendly_id (4.0.10.1)
+      activerecord (>= 3.0, < 4.0)
     hike (1.2.3)
     i18n (0.6.9)
     journey (1.0.4)
@@ -63,6 +65,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.25.1)
     multi_json (1.10.1)
+    mysql2 (0.3.11)
     mysql2 (0.3.11-x86-mingw32)
     orm_adapter (0.5.0)
     pg (0.17.1-x86-mingw32)
@@ -127,6 +130,7 @@ DEPENDENCIES
   ckeditor
   cloudinary
   coffee-rails (~> 3.2.1)
+  friendly_id
   jquery-rails
   mysql2 (= 0.3.11)
   pg
