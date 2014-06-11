@@ -1,10 +1,9 @@
 class Admin::TutorialsController < ApplicationController
 
-  @FRONTEND = 
   # GET /tutorials
   # GET /tutorials.json
   def index
-    @tutorials = Tutorial.all
+    @tutorials = Tutorial.order('title').page(params[:page]).per(5)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -28,6 +27,7 @@ class Admin::TutorialsController < ApplicationController
   def new
     @tutorial = Tutorial.new
     @tutorial.images.build
+	@tutorial.videos.build
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @tutorial }
@@ -46,7 +46,7 @@ class Admin::TutorialsController < ApplicationController
 
     respond_to do |format|
       if @tutorial.save
-        format.html { redirect_to [:admin, @tutorial], notice: 'Tutorial was successfully created.' }
+        format.html { redirect_to admin_tutorials_path, notice: 'Tutorial was successfully created.' }
         format.json { render json: @tutorial, status: :created, location: @tutorial }
       else
         format.html { render action: "new" }

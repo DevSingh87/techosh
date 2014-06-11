@@ -1,9 +1,18 @@
 Techosh::Application.routes.draw do
 
+  get "/home" => "static_pages#home"
+
+  get "/about" => "static_pages#about"
+
+  get "/terms" => "static_pages#term"
+
+  get "/policy" => "static_pages#policy"
   
-
-
-  resources :lectures
+  resources :lectures do
+     
+     resources :videotuts, :path => "video-tutorials"
+  end
+  
   namespace :admin do
     resources :tutorials do 
 	  resources :videos
@@ -60,7 +69,7 @@ Techosh::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'static_pages#home'
 
   # See how all your routes lay out with "rake routes"
 

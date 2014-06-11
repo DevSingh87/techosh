@@ -1,19 +1,42 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Title:</b>
-  <%= @tutorial.title %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @tutorial.description.html_safe %>
-</p>
-
 <%
   meta_title "#{@tutorial.title} - MyCoolBlog"
   meta_og_url request.original_url
-  
+  meta_description truncate(strip_tags(@tutorial.description), :length => 200)  
 %>
 
-<%= link_to 'Back', lectures_path %>
+	<div id="page-wrap">
+	        <section id="tutorial">
+	<div class="container">
+		<div class="row">
+			<div class="span7">
+				<h4><%= @tutorial.title %></h4>
+				
+			</div>
+			
+		</div>
+	
+</div>
+</section>
+		
+			<div class="container-fluid">
+
+				<div class="row-fluid">
+				  <div class="span10">
+				    <div class="post">
+											<%= @tutorial.description.html_safe %>
+										</div>
+					<div id="start" align="left">
+				    <%= link_to 'Getting Started', lecture_videotuts_path(@tutorial), :class => 'btn btn-primary pull-left' %>
+					</div>
+				  </div>
+					<div class="span2">
+					 <div class="ad-right-tower">
+					   <%= image_tag "wide-skyscraper.jpg" %>
+					</div>
+					</div>
+				</div>
+	  </div>
+</div>
+		</div>
+	 </div>
+	</div>

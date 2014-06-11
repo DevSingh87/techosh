@@ -1,25 +1,37 @@
-<h1>Listing tutorials</h1>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @tutorials.each do |tutorial| %>
-  <tr>
-    <td><%= tutorial.title %></td>
-    <td><%= tutorial.description %></td>
-    <td><%= link_to 'Show', [:admin, tutorial] %></td>
-    <td><%= link_to 'Edit', edit_admin_tutorial_path(tutorial) %></td>
-    <td><%= link_to 'Destroy', [:admin, tutorial], method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Tutorial', new_admin_tutorial_path %>
+<div id="page-wrap" style="padding-top:10px;">
+ <div class="container-fluid">
+  <%= link_to 'New Tutorial', new_admin_tutorial_path, :class => 'btn btn-warning' %>
+    <div class="row-fluid">
+					<div class="span12">
+						<div class="box box-color box-bordered">
+							<div class="box-title">
+								<h3>
+									<i class="icon-table"></i>
+									Listing Tutorials
+								</h3>
+							</div>
+							<div class="box-content nopadding">
+								<table class="table table-hover table-nomargin dataTable table-bordered">
+									<thead>
+										<tr>
+											<th>Title</th>
+											<th>Description</th>
+											<th></th>
+											<th></th>
+											<th></th>
+										  </tr>
+									</thead>
+									<tbody id="tutorials">
+									 <%= render 'tutorials' %>
+									</tbody>
+								</table>
+								<div class="table-pagination" id="paginator">
+									<%= paginate @tutorials, :theme => 'twitter-bootstrap' %>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>
+				</div>
+				

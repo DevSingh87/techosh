@@ -1,4 +1,5 @@
 class Admin::VideosController < ApplicationController
+  layout "admin"
   # GET /videos
   # GET /videos.json
   def index
@@ -46,7 +47,7 @@ class Admin::VideosController < ApplicationController
 
     respond_to do |format|
       if @video.save
-        format.html { redirect_to [:admin, @video.tutorial, tutorial], notice: 'Video was successfully created.' }
+        format.html { redirect_to [:admin, tutorial], notice: 'Video was successfully created.' }
         format.json { render json: @video, status: :created, location: @video }
       else
         format.html { render action: "new" }

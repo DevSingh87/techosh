@@ -1,0 +1,49 @@
+<%
+  meta_title "#{@lecture.title} - MyCoolBlog"
+  meta_og_url request.original_url
+  meta_description truncate(strip_tags(@lecture.description), :length => 200)  
+%>
+
+	<div id="page-wrap">
+	        <section id="tutorial">
+	<div class="container">
+		<div class="row">
+			<div class="span7">
+				<h4><%= @lecture.title %></h4>
+				
+			</div>
+			
+		</div>
+	
+</div>
+</section>
+		
+			<div class="container-fluid">
+
+				<div class="row-fluid">
+				  <div class="span10">
+				    <div class="post">
+					                   <table id="videolist">
+										<% @videotuts.each do |videotut| %>
+										  <tr>
+											<td><span id="video-tutorial" style="color:#368EE0; font-weight: bold;"><%= link_to videotut.title, lecture_videotut_path(videotut.tutorial, videotut), :target => '_blank' %></span></td>
+                                            
+										  </tr>
+										<% end %>
+										</table>
+										</div>
+					
+				  </div>
+					<div class="span2">
+					 <div class="ad-right-tower">
+					   <%= image_tag "wide-skyscraper.jpg" %>
+					</div>
+					</div>
+				</div>
+	  </div>
+</div>
+		</div>
+	 </div>
+	</div>
+
+

@@ -32,7 +32,20 @@ module Techosh
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+    
+	# disqus
+    Disqus::defaults[:container_id]   = 'disqus_thread', # desired thread container
+    Disqus::defaults[:avatar_size]    = 24, # squared pixel size of avatars
+    Disqus::defaults[:color]          = 'grey', # theme color
+    Disqus::defaults[:account] = 'testapp1987'
+    Disqus::defaults[:developer] = true # if you want to test it on the localhost
+	Disqus::defaults[:show_powered_by] = false
 
+    config.time_zone = 'Eastern Time (US & Canada)'
+
+    # for Heroku
+    config.assets.initialize_on_precompile = false
+	
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
 
