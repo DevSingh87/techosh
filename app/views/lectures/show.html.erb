@@ -1,7 +1,8 @@
 <%
-  meta_title "#{@tutorial.title} - MyCoolBlog"
+  meta_title "#{@tutorial.title}"
+  meta_description truncate(strip_tags(@tutorial.description), :length => 200) 
   meta_og_url request.original_url
-  meta_description truncate(strip_tags(@tutorial.description), :length => 200)  
+  meta_og_image "#{@tutorial.image.image}"  
 %>
 
 	<div id="page-wrap">

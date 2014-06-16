@@ -1,5 +1,5 @@
 class Admin::TutorialsController < ApplicationController
-
+  layout "admin"
   # GET /tutorials
   # GET /tutorials.json
   def index

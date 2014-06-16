@@ -1,5 +1,5 @@
 module ApplicationHelper
-	 #Meta tags helper methods
+   	 #Meta tags helper methods
 	def meta_title(title)
 	  content_for(:title, title)
 	end
@@ -24,7 +24,9 @@ module ApplicationHelper
 	  content_for(:meta_og_url, url)
 	end
 	
-	
+	def meta_og_image(image)
+	   content_for(:meta_og_image, image)
+    end	
 	def link_to_add_fields(name, f, association)
 		new_object = f.object.send(association).klass.new
 		id = new_object.object_id

@@ -1,12 +1,12 @@
 class Tutorial < ActiveRecord::Base
 
-  attr_accessible :description, :title, :images_attributes, :videos_attributes
-
-  has_many :images, :dependent => :destroy
+  attr_accessible :description, :title, :image_attributes, :videos_attributes
+  
+  has_one :image, :dependent => :destroy
   
   has_many :videos, :dependent => :destroy
   
-  accepts_nested_attributes_for :images,
+  accepts_nested_attributes_for :image,
                                 :reject_if => :all_blank,
                                 :allow_destroy => true
 								

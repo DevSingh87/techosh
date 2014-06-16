@@ -37,7 +37,7 @@ module Techosh
     Disqus::defaults[:container_id]   = 'disqus_thread', # desired thread container
     Disqus::defaults[:avatar_size]    = 24, # squared pixel size of avatars
     Disqus::defaults[:color]          = 'grey', # theme color
-    Disqus::defaults[:account] = 'testapp1987'
+    Disqus::defaults[:account] = 'techoshdotcom'
     Disqus::defaults[:developer] = true # if you want to test it on the localhost
 	Disqus::defaults[:show_powered_by] = false
 
@@ -72,5 +72,8 @@ module Techosh
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 	config.assets.initialize_on_precompile = false
+	
+	# Add the fonts path
+    config.assets.paths << Rails.root.join('app', 'assets', 'font')
   end
 end

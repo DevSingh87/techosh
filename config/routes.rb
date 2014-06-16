@@ -14,6 +14,7 @@ Techosh::Application.routes.draw do
   end
   
   namespace :admin do
+    resources :articles
     resources :tutorials do 
 	  resources :videos
 	end
