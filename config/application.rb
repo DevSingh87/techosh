@@ -75,5 +75,7 @@ module Techosh
 	
 	# Add the fonts path
     config.assets.paths << Rails.root.join('app', 'assets', 'font')
+	# Add ckeditor assets
+	config.assets.precompile += Ckeditor.assets
   end
 end
