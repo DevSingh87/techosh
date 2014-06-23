@@ -36,14 +36,14 @@
 				</li>
 
 			</ul>
-			<div class="user">
-				<div class="dropdown">
-					<a href="#" data-toggle="dropdown" class="btn btn-primary dropdown-toggle"><b>Dev</b> <span class="caret"></span></a>
-					<ul class="dropdown-menu pull-right">
-						<li>
-							<a href="#">Logout</a>						</li>
-					</ul>
-				</div>
+			<div class="user" style="padding-top:5px; padding-right:70px;">
+				
+					<% if user_signed_in? %>  
+						<%= link_to "Sign out", destroy_user_session_path, :method => :delete, :class => 'btn btn-primary' %>  
+					  <% else %>  
+						<%= link_to "Sign in", new_user_session_path, :class => 'btn btn-primary' %>  
+					  <% end %> 
+				
 			</div>
 
 		</div>

@@ -1,37 +1,28 @@
 class Admin::TutorialsController < ApplicationController
   layout "admin"
+  respond_to :html
+  before_filter :authenticate_user!
   # GET /tutorials
   # GET /tutorials.json
   def index
     @tutorials = Tutorial.order('title').page(params[:page]).per(5)
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @tutorials }
-    end
+    respond_with(@tutorials)
   end
 
   # GET /tutorials/1
   # GET /tutorials/1.json
   def show
     @tutorial = Tutorial.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @tutorial }
-    end
+    respond_with(@tutorial)
   end
 
   # GET /tutorials/new
   # GET /tutorials/new.json
   def new
     @tutorial = Tutorial.new
-    @tutorial.images.build
+    @tutorial.build_image
 	@tutorial.videos.build
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @tutorial }
-    end
+    respond_with(@tutorial)
   end
 
   # GET /tutorials/1/edit

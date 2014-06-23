@@ -1,13 +1,9 @@
 class LecturesController < ApplicationController
+  respond_to :html
   # GET /tutorials
   # GET /tutorials.json
   def index
-    @tutorials = Tutorial.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @tutorials }
-    end
+   redirect_to root_path
   end
 
   # GET /tutorials/1
@@ -15,25 +11,7 @@ class LecturesController < ApplicationController
   def show
     @tutorial = Tutorial.find(params[:id])
 	@videos = @tutorial.videos.all
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @tutorial }
-    end
+    respond_with(@videos)
   end
   
-   def edit
-    @tutorial = Tutorial.find(params[:id])
-  end
-  
-   def contents
-    @tutorial = Tutorial.find(1)
-	@videos = @tutorial.videos.all
-
-    respond_to do |format|
-      format.html # preview.html.erb
-      format.json { render json: @tutorial }
-    end
-  end
-
 end

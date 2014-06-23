@@ -23,7 +23,7 @@
  <%= render 'video_fields', f: videos %>
  <% end %>
   <%= link_to_add_fields "Add Video", f, :videos %> 
- <%= f.fields_for :images do |bundler| %>
+ <%= f.fields_for :image do |bundler| %>
   <div class="field">
     <%= bundler.label :image %><br>
     <%= bundler.file_field :image %>

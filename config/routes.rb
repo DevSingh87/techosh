@@ -1,5 +1,11 @@
 Techosh::Application.routes.draw do
 
+  get "blog/index"
+
+  get "blog/show"
+
+  devise_for :users
+
   get "/home" => "static_pages#home"
 
   get "/about" => "static_pages#about"
@@ -8,6 +14,8 @@ Techosh::Application.routes.draw do
 
   get "/policy" => "static_pages#policy"
   
+  get "/contact" => "static_pages#contact"
+  
   resources :lectures do
      
      resources :videotuts, :path => "video-tutorials"
@@ -15,6 +23,7 @@ Techosh::Application.routes.draw do
   
   namespace :admin do
     resources :articles
+	resources :tags
     resources :tutorials do 
 	  resources :videos
 	end

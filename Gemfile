@@ -45,13 +45,15 @@ gem 'jquery-slimscroll-rails', '1.0.9'
 # To use debugger
 # gem 'debugger'
 
-gem 'ckeditor'
+gem 'ckeditor' #text editor
 
 #image uploads
-gem 'carrierwave'
-gem 'cloudinary'
+gem 'carrierwave' #image upload
+gem 'cloudinary' #cloud based image hosting
 
-gem 'friendly_id'
-gem 'disqus'
-gem 'kaminari'
-gem 'bootstrap-kaminari-views'
+gem 'friendly_id' # seo frienddly urls
+gem 'disqus' #commenting system
+gem 'kaminari' #for pagination
+gem 'bootstrap-kaminari-views' #bootstrap views for kaminari
+
+gem 'devise' #authentication system

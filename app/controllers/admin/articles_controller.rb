@@ -1,36 +1,26 @@
 class Admin::ArticlesController < ApplicationController
  layout "admin"
+ respond_to :html
+ before_filter :authenticate_user!
   # GET /articles
   # GET /articles.json
   def index
     @articles = Article.order('title').page(params[:page]).per(5)
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @articles }
-    end
+    respond_with(@articles)
   end
 
   # GET /articles/1
   # GET /articles/1.json
   def show
     @article = Article.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @article }
-    end
+    respond_with(@article)
   end
 
   # GET /articles/new
   # GET /articles/new.json
   def new
     @article = Article.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @article }
-    end
+    respond_with(@article)
   end
 
   # GET /articles/1/edit
@@ -77,7 +67,7 @@ class Admin::ArticlesController < ApplicationController
     @article.destroy
 
     respond_to do |format|
-      format.html { redirect_to articles_url }
+      format.html { redirect_to admin_articles_path }
       format.json { head :no_content }
     end
   end

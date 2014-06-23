@@ -1,14 +1,11 @@
 class VideotutsController < ApplicationController
+  respond_to :html
   # GET /videos
   # GET /videos.json
   def index
     @lecture = Tutorial.find(params[:lecture_id])
     @videotuts = @lecture.videos
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @videos }
-    end
+    respond_with(@videotuts)
   end
 
   # GET /videos/1
@@ -17,12 +14,7 @@ class VideotutsController < ApplicationController
     lecture = Tutorial.find(params[:lecture_id])
 	@videotuts = lecture.videos
     @videotut = lecture.videos.find(params[:id])
-	
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @video }
-    end
+	respond_with(@videotut)
   end
 
- 
 end

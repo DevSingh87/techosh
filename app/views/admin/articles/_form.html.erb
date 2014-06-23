@@ -19,7 +19,12 @@
     <%= f.label :body %><br />
     <%= f.cktext_area :body, :ckeditor => {:uiColor => '#AADC6E', :toolbar => 'mini'} %>
   </div>
+  <div class="field">
+    <%= f.label :tag_list, "Tags" %><br />
+    <%= f.text_field :tag_list, :id => 'textfield', :class => 'tagsinput' %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+

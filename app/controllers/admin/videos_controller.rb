@@ -1,25 +1,19 @@
 class Admin::VideosController < ApplicationController
   layout "admin"
+  respond_to :html
+  before_filter :authenticate_user!
   # GET /videos
   # GET /videos.json
   def index
     @videos = Video.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @videos }
-    end
+    respond_with(@videos)
   end
 
   # GET /videos/1
   # GET /videos/1.json
   def show
     @video = Video.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @video }
-    end
+    respond_with(@video)
   end
 
   # GET /videos/new
@@ -27,11 +21,7 @@ class Admin::VideosController < ApplicationController
   def new
     tutorial = Tutorial.find(params[:tutorial_id])
     @video = tutorial.videos.build
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @video }
-    end
+    respond_with(@video)
   end
 
   # GET /videos/1/edit

@@ -10,4 +10,7 @@ class StaticPagesController < ApplicationController
 
   def policy
   end
+  
+  def contact
+  end
 end
