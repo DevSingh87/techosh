@@ -4,7 +4,7 @@ class VideotutsController < ApplicationController
   # GET /videos.json
   def index
     @lecture = Tutorial.find(params[:lecture_id])
-    @videotuts = @lecture.videos
+    @videotuts = @lecture.videos.order(:id)
     respond_with(@videotuts)
   end
 
