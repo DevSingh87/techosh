@@ -18,8 +18,8 @@ class Tutorial < ActiveRecord::Base
   validates :slug,  :presence => true, :uniqueness => true
   validates_associated :videos
   
-  #extend FriendlyId
-  #friendly_id :title, use: :slugged
+  extend FriendlyId
+  friendly_id :title, use: :slugged
  
   before_validation :create_slug
   

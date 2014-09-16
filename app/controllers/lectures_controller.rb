@@ -11,7 +11,7 @@ class LecturesController < ApplicationController
   def show
     @tutorial = Tutorial.find(params[:id])
 	@videos = @tutorial.videos.all
-    respond_with(@tutorial)
+    respond_with(@videos)
   end
   
 end
