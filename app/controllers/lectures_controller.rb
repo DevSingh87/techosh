@@ -10,7 +10,7 @@ class LecturesController < ApplicationController
   # GET /tutorials/1.json
   def show
     @tutorial = Tutorial.find(params[:id])
-	@videos = @tutorial.videos.all
+	@videos = @tutorial.videos.order(:id).all
     respond_with(@videos)
   end
   
