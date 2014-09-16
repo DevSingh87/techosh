@@ -9,8 +9,8 @@ class Video < ActiveRecord::Base
 	validates :title, :video_url,
 	          :presence => true
 	
-	extend FriendlyId
-    friendly_id :title, use: :slugged
+	#extend FriendlyId
+    #friendly_id :title, use: :slugged
 	
 	before_validation :create_slug
     
