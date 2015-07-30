@@ -77,5 +77,7 @@ module Techosh
     config.assets.paths << Rails.root.join('app', 'assets', 'font')
 	# Add ckeditor assets
 	config.assets.precompile += Ckeditor.assets
+
+    config.exceptions_app = self.routes
   end
 end

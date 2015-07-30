@@ -1,10 +1,19 @@
 Techosh::Application.routes.draw do
 
+  get "errors/file_not_found"
+
+  get "errors/unprocessable"
+
+  get "errors/internal_server_error"
+
   get "blog/index"
 
   get "blog/show"
 
-  devise_for :users
+  devise_for :users, path_names: { sign_in: 'admin' }
+  devise_scope :user do
+     get "admin", to: "devise/sessions#new"
+  end
 
   root :to => 'static_pages#home'
 
@@ -15,6 +24,10 @@ Techosh::Application.routes.draw do
   get "/policy" => "static_pages#policy"
   
   get "/contact" => "static_pages#contact"
+
+  get "/404", to: "errors#file_not_found"
+  get "/422", to: "errors#unprocessable"
+  get "/500", to: "errors#internal_server_error"
   
   resources :lectures do
      

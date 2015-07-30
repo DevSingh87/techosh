@@ -68,4 +68,7 @@ Techosh::Application.configure do
   
   #dafault url
   config.action_mailer.default_url_options = { :host => 'www.techosh.com' }
+
+  config.consider_all_requests_local = false
+
 end

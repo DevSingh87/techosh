@@ -55,13 +55,13 @@
 						<div class="container-fluid">
 						<div class="row-fluid">
 				           <div class="span5">
-						    	<%= link_to( "Prev", lecture_videotut_path(@videotut.tutorial, @videotut.previous), :class=>"btn btn-warning") %>
+						    	<%= link_to( "Prev", lecture_videotut_path(@videotut.tutorial, @videotut.previous), :class=>"btn btn-warning") if @videotut.previous %>
 							</div>
 						<div class="span6" style="margin-left:-10px;">
 						    <%#<a href="#" class="btn btn-warning">Download this video</a>%>
 							</div>
 							<div class="span1">
-						     <%= link_to( "Next", lecture_videotut_path(@videotut.tutorial, @videotut.next), :class=>"btn btn-warning") %>
+						     <%= link_to( "Next", lecture_videotut_path(@videotut.tutorial, @videotut.next), :class=>"btn btn-warning") if @videotut.next %>
 							</div>
 							</div>
 							</div>

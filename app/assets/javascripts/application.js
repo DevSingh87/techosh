@@ -14,9 +14,7 @@
 //= require jquery_ujs
 //= require jquery.slimscroll.min
 //= require jquery.ui.all
-//= require eakroko.min.js
 //= require application.min.js
-//= require jquery.tagsinput.min
 //= require ckeditor/init
 //= require_tree .
 
