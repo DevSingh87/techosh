@@ -1,7 +1,10 @@
 class Tutorial < ActiveRecord::Base
 
-  attr_accessible :description, :title, :image_attributes, :videos_attributes
+  attr_accessible :description, :title, :image_attributes, :videos_attributes, :category_id, :university_id, :subject_id
   
+  belongs_to :category
+  belongs_to :university
+  belongs_to :subject
   has_one :image, :dependent => :destroy
   
   has_many :videos, :dependent => :destroy

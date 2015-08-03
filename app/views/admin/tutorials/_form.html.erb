@@ -10,7 +10,18 @@
       </ul>
     </div>
   <% end %>
-
+ <div class="field">
+    Category<br />
+    <%= f.collection_select :category_id, Category.all, :id, :name, { :prompt => '--Choose Category--' }, { mutilple: false } %>
+  </div>
+  <div class="field">
+    University<br />
+    <%= f.collection_select :university_id, University.all, :id, :name, { :prompt => '--Choose University--' }, { mutilple: false } %>
+  </div>
+  <div class="field">
+    Subject<br />
+   <%= f.collection_select :subject_id, Subject.all, :id, :name, { :prompt => '--Choose Subject--' }, { mutilple: false } %>
+  </div>
   <div class="field">
     <%= f.label :title %><br />
     <%= f.text_field :title %>

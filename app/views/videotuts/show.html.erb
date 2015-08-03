@@ -133,7 +133,7 @@
 						<!-- BEGIN .left-content -->
 						<div class="left-content">
 							<div class="main-title">
-								<h2><%= @videotut.title %></h2>
+								<h3><%= @videotut.title %></h3>
 								<span><%= @videotut.tutorial.title %></span>
 							</div>
 							
@@ -154,40 +154,66 @@
 					width: "100%"
 
 					});
+					jwplayer().onPlay(function() { jwplayer().setCurrentQuality(2); });
 					</script>
 						
 							</div>
 						<div class="paragraph-row" style="padding-top:10px;">
+						<div class="column3">
+						    	<%= link_to( "Prev", lecture_videotut_path(@videotut.tutorial, @videotut.previous), :class=>"button") if @videotut.previous %>
+							</div>
 						
+							<div class="column3" style="margin-top:7px;">
+						     <div class="ot-star-rating">
+												<span style="width: 100%;" class=""><strong class="rating">5</strong> out of 5</span>
+												
+											</div>
+							</div>
+							<div class="column3" align="center" style="margin-top:7px;">
+						     <i class="fa fa-book"></i> <%= "#{1000+@videotut.impressionist_count} views!" %>
+							</div>
+							
+							<div class="column3" align="right">
+						     <%= link_to( "Next", lecture_videotut_path(@videotut.tutorial, @videotut.next), :class=>"button") if @videotut.next %>
+							</div>
+						<!--
 				          <div class="column4">
 						    	 <div class="ot-star-rating">
 												<span style="width: 100%;" class=""><strong class="rating">5</strong> out of 5</span>
 												
 											</div>
 							</div>
+							
 						<div class="column4" align="center">
 						     <i class="fa fa-book"></i>1000 views
 							</div>
+							
 							<div class="column4" align="right">
 						     <i class="fa fa-book"></i>1000 views
 							</div>
 														
 						</div>
-
+                       -->
+                       <!--
 						<div class="paragraph-row" >
 						
-				          <div class="column4">
+				          <div class="column3">
 						    	<%= link_to( "Prev", lecture_videotut_path(@videotut.tutorial, @videotut.previous), :class=>"button") if @videotut.previous %>
 							</div>
 						
-							<div class="column4" align="center">
-						     <a href="/lectures/web-design-html-css/video-tutorials/4-heading-and-paragraph-tags" class="button">Next</a>
+							<div class="column5">
+						     <div class="ot-star-rating">
+												<span style="width: 100%;" class=""><strong class="rating">5</strong> out of 5</span><i class="fa fa-book"></i>1000 views
+												
+											</div>
 							</div>
+							
 							<div class="column4" align="right">
 						     <%= link_to( "Next", lecture_videotut_path(@videotut.tutorial, @videotut.next), :class=>"button") if @videotut.next %>
 							</div>
-							
+						-->	
 						</div>
+						
 						</div>
 								
 
@@ -210,8 +236,9 @@
 
                        <div class="tut-content">
                        <h3 style="color: #276197; border-bottom: 3px solid #276197;">Course Contents</h3>
-								<p>1 - Expetendis, 2-semper euripidis, 3-Senserit, 4-phaedrum gubergren, 5-option nostrud, Senserit, phaedrum gubergren, Expetendis,option nostrud</p>
+								<p><%= @videotuts.map(&:title).join(", ") %></p>
 							</div>
+							<!--
 							<div class="tag-cloud-body">
 								<a href="#">Expetendis</a>
 								<a href="#">semper euripidis</a>
@@ -223,6 +250,7 @@
 								<a href="#">Expetendis</a>
 								<a href="#">option nostrud</a>
 							</div>
+							-->
 						<div class="article-body-banner banner">
 								<%= image_tag "no-banner-728x90.jpg" %>
 							</div>
@@ -311,4 +339,10 @@
 				
 			<!-- BEGIN .content -->
 			</section>
-			
+		
+		
+		<script type="text/javascript">
+		$('.scrollable').slimScroll({
+		    height: '500px'
+		});
+				</script>

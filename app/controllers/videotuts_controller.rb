@@ -1,10 +1,12 @@
 class VideotutsController < ApplicationController
+  impressionist actions: [:index, :show]
   respond_to :html
   # GET /videos
   # GET /videos.json
   def index
     @lecture = Tutorial.find(params[:lecture_id])
     @videotuts = @lecture.videos.order(:id)
+    
    
   end
 
@@ -14,7 +16,7 @@ class VideotutsController < ApplicationController
     lecture = Tutorial.find(params[:lecture_id])
 	  @videotuts = lecture.videos.order(:id)
     @videotut = lecture.videos.find(params[:id])
-	
+	  impressionist(@videotut)
   end
 
 end

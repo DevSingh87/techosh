@@ -25,6 +25,7 @@ Techosh::Application.routes.draw do
   
   get "/contact" => "static_pages#contact"
 
+
   get "/404", to: "errors#file_not_found"
   get "/422", to: "errors#unprocessable"
   get "/500", to: "errors#internal_server_error"

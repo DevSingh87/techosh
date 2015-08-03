@@ -1,4 +1,5 @@
 class Video < ActiveRecord::Base
+	is_impressionable
     attr_accessible :tutorial_id, :title, :video_url
 	
 	belongs_to :tutorial

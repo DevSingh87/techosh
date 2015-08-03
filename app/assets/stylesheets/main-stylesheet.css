@@ -23,7 +23,7 @@
 @media all and (-webkit-min-device-pixel-ratio:0) {
 	@font-face {
 		font-family: 'FontAwesome';
-		src: url('/assets/fontawesome-webfont.svg#fontawesomeregular') format('svg'), url('/assets/fontawesome-webfont.eot?#iefix&v=3.2.1') format('embedded-opentype'), url('/assets/fontawesome-webfont.woff?v=3.2.1') format('woff'), url('/assets/fontawesome-webfont.ttf?v=3.2.1') format('truetype');
+		src: url('../fonts/fontawesome-webfont.svg#fontawesomeregular') format('svg'), url('../fonts/fontawesome-webfont.eot?#iefix&v=3.2.1') format('embedded-opentype'), url('../font/fontawesome-webfont.woff?v=3.2.1') format('woff'), url('../font/fontawesome-webfont.ttf?v=3.2.1') format('truetype');
 		font-weight: normal;
 		font-style: normal;
 	}
@@ -74,6 +74,11 @@ a:focus {
 
 .wrapper {
 	width: 1190px;
+	margin: 0px auto;
+	position: relative;
+}
+.wrapper-admin {
+	width: 1390px;
 	margin: 0px auto;
 	position: relative;
 }

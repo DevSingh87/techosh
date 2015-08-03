@@ -59,3 +59,4 @@ gem 'bootstrap-kaminari-views' #bootstrap views for kaminari
 
 gem 'devise' #authentication system
 
+gem 'impressionist'

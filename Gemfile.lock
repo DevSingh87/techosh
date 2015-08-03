@@ -67,7 +67,11 @@ GEM
     friendly_id (4.0.10.1)
       activerecord (>= 3.0, < 4.0)
     hike (1.2.3)
+    httpclient (2.6.0.1)
     i18n (0.6.9)
+    impressionist (1.5.1)
+      httpclient (~> 2.2)
+      nokogiri (~> 1.5)
     journey (1.0.4)
     jquery-rails (3.1.0)
       railties (>= 3.0, < 5.0)
@@ -83,9 +87,14 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.25.1)
+    mini_portile (0.6.2)
     multi_json (1.10.1)
     mysql2 (0.3.11)
     mysql2 (0.3.11-x86-mingw32)
+    nokogiri (1.6.6.2)
+      mini_portile (~> 0.6.0)
+    nokogiri (1.6.6.2-x86-mingw32)
+      mini_portile (~> 0.6.0)
     orm_adapter (0.5.0)
     polyglot (0.3.5)
     rack (1.4.5)
@@ -154,6 +163,7 @@ DEPENDENCIES
   devise
   disqus
   friendly_id
+  impressionist
   jquery-rails
   jquery-slimscroll-rails (= 1.0.9)
   jquery-ui-rails (~> 4.2.1)
