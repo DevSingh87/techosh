@@ -1,5 +1,14 @@
 Techosh::Application.routes.draw do
 
+  resources :subjects
+
+
+  resources :categories
+
+
+  resources :universities
+
+
   get "errors/file_not_found"
 
   get "errors/unprocessable"
@@ -25,6 +34,10 @@ Techosh::Application.routes.draw do
   
   get "/contact" => "static_pages#contact"
 
+  get "/category/:category_id" => "static_pages#category", as: :categorywisetuts
+  get "/university/:university_id" => "static_pages#university", as: :universitywisetuts
+  get "/subject/:subject_id" => "static_pages#subject", as: :subjectwisetuts
+
 
   get "/404", to: "errors#file_not_found"
   get "/422", to: "errors#unprocessable"
@@ -34,10 +47,10 @@ Techosh::Application.routes.draw do
      
      resources :videotuts, :path => "video-tutorials"
   end
-  
+ 
   namespace :admin do
     resources :articles
-	resources :tags
+	  resources :tags
     resources :tutorials do 
 	  resources :videos
 	end

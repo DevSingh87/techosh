@@ -1,8 +1,11 @@
 class Video < ActiveRecord::Base
 	is_impressionable
-    attr_accessible :tutorial_id, :title, :video_url
+    attr_accessible :tutorial_id, :title, :video_url, :all_tags
 	
 	belongs_to :tutorial
+
+	has_many :taggings, :dependent => :destroy
+    has_many :tags, through: :taggings
 	
 	scope :next, lambda {|id| where("id > ?",id).order("id ASC") }
 	scope :previous, lambda {|id| where("id < ?",id).order("id DESC") }
@@ -22,6 +25,8 @@ class Video < ActiveRecord::Base
     def previous
       Video.previous(self.id).first
     end
+
+    
 	
 	private
 

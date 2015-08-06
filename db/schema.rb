@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150803123011) do
+ActiveRecord::Schema.define(:version => 20150805063120) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(:version => 20150803123011) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
+    t.string   "slug"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -62,15 +63,16 @@ ActiveRecord::Schema.define(:version => 20150803123011) do
 
   create_table "subjects", :force => true do |t|
     t.string   "name"
+    t.string   "slug"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   create_table "taggings", :force => true do |t|
-    t.integer  "article_id"
+    t.integer  "tutorial_id"
     t.integer  "tag_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "tags", :force => true do |t|
@@ -92,6 +94,7 @@ ActiveRecord::Schema.define(:version => 20150803123011) do
 
   create_table "universities", :force => true do |t|
     t.string   "name"
+    t.string   "slug"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

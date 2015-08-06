@@ -6,6 +6,21 @@
 <meta property="og:description" content="Click here to watch the video." />
 <meta property="og:url" content="<%= yield(:meta_og_url).presence || "http://www.techosh.com/" %>" />
 <meta property="og:site_name" content="http://www.techosh.com/" />
-<meta property="og:image" content="<%= yield(:meta_og_image).presence || "http://www.techosh.com/logo.png" %>" />
-<meta property="og:type" content="video" />
+<meta property="og:image" content="<%= yield(:meta_og_image).presence || "http://www.techosh.com/banner.png" %>" />
+<meta property="og:type" content="video.other" />
+<meta property="og:video:type" content="application/x-shockwave-flash">
 <meta property="fb:app_id" content="1398035213779305" />
+
+<meta name="video_type" content="application/x-shockwave-flash" />
+
+        <link rel="image_src" href="<%= yield(:meta_og_image).presence || "http://www.techosh.com/banner.png" %>" />
+        <link rel="video_src" href="<%= yield(:meta_video_url).presence || "http://www.techosh.com/logo.png" %>" />
+
+<meta name="twitter:site" content="@TechoshDotCom">
+<meta name="twitter:card" content="Watch Video" />
+
+<meta name="twitter:title" content="<%= yield(:title).presence || "Free Online Video Tutorials-Lectures" %>" />
+
+<meta name="twitter:description" content="Click here to watch the video." />
+<meta name="twitter:url" content="http://www.techosh.com" />
+<meta name="twitter:image" content="<%= yield(:meta_og_image).presence || "http://www.techosh.com/logo.png" %>" />
