@@ -1,12 +1,12 @@
 Techosh::Application.routes.draw do
 
-  resources :subjects
+  resources :subjects, only: [:index, :show]
 
 
-  resources :categories
+  resources :categories, only: [:index, :show]
 
 
-  resources :universities
+  resources :universities, only: [:index, :show]
 
 
   get "errors/file_not_found"
@@ -34,14 +34,14 @@ Techosh::Application.routes.draw do
   
   get "/contact" => "static_pages#contact"
 
-  get "/category/:category_id" => "static_pages#category", as: :categorywisetuts
-  get "/university/:university_id" => "static_pages#university", as: :universitywisetuts
-  get "/subject/:subject_id" => "static_pages#subject", as: :subjectwisetuts
+  get "/category/:category_id" => "categories#show", as: :categorywisetuts
+  get "/university/:university_id" => "universities#show", as: :universitywisetuts
+  get "/subject/:subject_id" => "subjects#show", as: :subjectwisetuts
 
 
   get "/404", to: "errors#file_not_found"
   get "/422", to: "errors#unprocessable"
-  get "/500", to: "errors#internal_server_error"
+  #get "/500", to: "errors#internal_server_error"
   
   resources :lectures do
      

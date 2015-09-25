@@ -15,8 +15,8 @@
 							<strong data-anim-in="fadeOutUpBig" data-anim-out="bounceIn"><i class="fa fa-home"></i> Homepage</strong>
 						</div>
 						<div class="header-socials">
+						    <a href="#"><i class="fa fa-facebook"></i></a>
 							<a href="#"><i class="fa fa-twitter"></i></a>
-							<a href="#"><i class="fa fa-facebook"></i></a>
 							<a href="#"><i class="fa fa-google-plus"></i></a>
 							<a href="#"><i class="fa fa-youtube"></i></a>
 							<a href="#"><i class="fa fa-vimeo-square"></i></a>
@@ -28,40 +28,53 @@
 							<ul class="load-responsive" rel="Main Menu">
 								<li><a href="#"><span>BackEnd <i>Programming</i></span></a>
 									<ul class="sub-menu">
-										<li><a href="#">Shortcodes</a></li>
-										<li><a href="#"><span>Custom Templates</span></a></li>
-										<li><a href="#">Full-width page</a></li>
+										<li><a href="<%= lecture_path(Tutorial.find_by_id(3)) %>">C Programming</a></li>
+										<li><a href="<%= lecture_path(Tutorial.find_by_id(8)) %>">C++ Programming</a></li>
+										<li><a href="<%= lecture_path(Tutorial.find_by_id(5)) %>">C# Programming</a></li>
+										<li><a href="<%= lecture_path(Tutorial.find_by_id(6)) %>">Java</a></li>
+										<li><a href="<%= lecture_path(Tutorial.find_by_id(2)) %>">PHP</a></li>
+										<li><a href="<%= lecture_path(Tutorial.find_by_id(15)) %>">Python</a></li>
+										<li><a href="<%= lecture_path(Tutorial.find_by_id(16)) %>">Ruby</a></li>
 									</ul>
 								</li></li>
 								<li><a href="#"><span>FrontEnd<i>Programming</i></span></a>
 									<ul class="sub-menu">
-										<li><a href="#">Shortcodes</a></li>
-										<li><a href="#"><span>Custom Templates</span></a></li>
-										<li><a href="#">Full-width page</a></li>
+										<li><a href="<%= lecture_path(Tutorial.find_by_id(1)) %>">HTML - CSS</a></li>
+										<li><a href="<%= lecture_path(Tutorial.find_by_id(18)) %>">JavaScript</a></li>
+										<li><a href="<%= lecture_path(Tutorial.find_by_id(13)) %>">jQuery</a></li>
 									</ul>
 								</li>
 								<li><a href="#"><span>DataBase<i>Programming</i></span></a>
 									<ul class="sub-menu">
-										<li><a href="#">Shortcodes</a></li>
-										<li><a href="#"><span>Custom Templates</span></a></li>
-										<li><a href="#">Full-width page</a></li>
+										<li><a href="<%= lecture_path(Tutorial.find_by_id(4)) %>">MySql</a></li>
+										<li><a href="<%= lecture_path(Tutorial.find_by_id(21)) %>">Sql Server</a></li>
+										
 									</ul>
 								</li>
 										<li><a href="#"><span>FrameWork<i>Programming</i></span></a>
 									<ul class="sub-menu">
-										<li><a href="#">Shortcodes</a></li>
-										<li><a href="#"><span>Custom Templates</span></a></li>
-										<li><a href="#">Full-width page</a></li>
+										<li><a href="<%= lecture_path(Tutorial.find_by_id(14)) %>">Ruby On Rails</a></li>
+										<li><a href="<%= lecture_path(Tutorial.find_by_id(19)) %>">Django</a></li>
+										<li><a href="<%= lecture_path(Tutorial.find_by_id(25)) %>">Zend Framework</a></li>
+										<li><a href="<%= lecture_path(Tutorial.find_by_id(20)) %>">Yii Framework</a></li>
+										<li><a href="<%= lecture_path(Tutorial.find_by_id(24)) %>">CodeIgniter</a></li>
 									</ul>
 								</li>
 								<li><a href="#"><span>CMS<i>Programming</i></span></a>
 									<ul class="sub-menu">
-										<li><a href="#">Shortcodes</a></li>
-										<li><a href="#"><span>Custom Templates</span></a></li>
-										<li><a href="#">Full-width page</a></li>
+										<li><a href="<%= lecture_path(Tutorial.find_by_id(26)) %>">WordPress</a></li>
+										<li><a href="<%= lecture_path(Tutorial.find_by_id(22)) %>">Magento</a></li>
+										
 									</ul>
 								</li>
-								<li><a href="contact-us.html">Contact Us<i>Get in touch</i></a></li>
+								<li><a href="#"><span>Mobile<i>App Development</i></span></a>
+									<ul class="sub-menu">
+										<li><a href="<%= lecture_path(Tutorial.find_by_id(12)) %>">Android</a></li>
+										<li><a href="#">iOS</a></li>
+										<li><a href="#">PhoneGap</a></li>
+										
+									</ul>
+								</li>
 							</ul>
 							<div class="search-header">
 								<form action="get">
@@ -72,12 +85,10 @@
 						</nav>
 						<nav class="under-menu">
 							<ul class="load-responsive" rel="Sub Menu">
-								<li><a href="archive.html">Universities</a></li>
-								<li><a href="archive.html">Engineering Branches</a></li>
-								<li><a href="error-404.html">Subjects</a></li>
 								<li><a href="contact-us.html">Interview Questions & Answers</a></li>
-								<li><a href="contact-us.html">Placements Papers</a></li>
-								<li><a href="contact-us.html">Blogs</a></li>
+								<li><a href="#">Placements Papers</a></li>
+								<li><a href="#">Blogs</a></li>
+								<li><a href="<%= contact_path %>">Contact Us</a></li>
 							</ul>
 						</nav>
 					</div>

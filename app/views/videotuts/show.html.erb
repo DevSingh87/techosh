@@ -1,7 +1,7 @@
 <%
-  meta_title "#{@videotut.title}"
-  meta_keywords "#{@videotut.tutorial.tag_list}"
-  meta_description "#{@videotut.tutorial.title+" - "+@videotut.title}"
+  meta_title "#{@videotut.title} video tutorial lecture in hindi urdu"
+  meta_keywords "#{@videotut.tutorial.tag_list}, #{@videotut.tutorial.title} video tutorials in hindi, #{@videotut.tutorial.title} video tutorials in urdu, #{@videotut.tutorial.title} video lectures in hindi, #{@videotut.tutorial.title} video lectures in urdu, download video tutorial in hindi urdu, free video tutorials lectures in hindi urdu, online college courses, online university courses, online classes, online training courses, online courses, NPTEL videos, mit courses, free online courses, stanford videos, engineering video lectures, medical video lectures, educational videos, video courses, online tutorials, freevideolectures.com"
+  meta_description "free online #{@videotut.tutorial.title} video tutorials lectures in hindi urdu. #{@videotut.title} video tutorial lecture in hindi urdu. - freevideolectures.com"
   meta_og_url "#{request.protocol + request.host+request.fullpath}"
   meta_og_image "#{cloudinary_url(@videotut.tutorial.image.image)}"
   meta_video_url "#{'https://www.youtube.com/embed/'+@videotut.video_url}"

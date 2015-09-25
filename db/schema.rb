@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150805063120) do
+ActiveRecord::Schema.define(:version => 20150925104932) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(:version => 20150805063120) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  add_index "categories", ["slug"], :name => "index_categories_on_slug"
 
   create_table "images", :force => true do |t|
     t.integer  "tutorial_id"
@@ -68,6 +70,8 @@ ActiveRecord::Schema.define(:version => 20150805063120) do
     t.datetime "updated_at", :null => false
   end
 
+  add_index "subjects", ["slug"], :name => "index_subjects_on_slug"
+
   create_table "taggings", :force => true do |t|
     t.integer  "tutorial_id"
     t.integer  "tag_id"
@@ -92,12 +96,16 @@ ActiveRecord::Schema.define(:version => 20150805063120) do
     t.integer  "subject_id"
   end
 
+  add_index "tutorials", ["slug"], :name => "index_tutorials_on_slug"
+
   create_table "universities", :force => true do |t|
     t.string   "name"
     t.string   "slug"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  add_index "universities", ["slug"], :name => "index_universities_on_slug"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -126,6 +134,7 @@ ActiveRecord::Schema.define(:version => 20150805063120) do
     t.string   "slug"
   end
 
+  add_index "videos", ["slug"], :name => "index_videos_on_slug"
   add_index "videos", ["tutorial_id"], :name => "index_videos_on_tutorial_id"
 
 end

@@ -6,6 +6,7 @@ gem 'rails', '3.2.18'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 group :development, :test do
  gem 'mysql2', '0.3.11'
+ gem 'pry'
 end 
 =begin  
 group :production do 
