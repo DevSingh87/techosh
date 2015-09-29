@@ -1,14 +1,5 @@
 Techosh::Application.routes.draw do
 
-  resources :subjects, only: [:index, :show]
-
-
-  resources :categories, only: [:index, :show]
-
-
-  resources :universities, only: [:index, :show]
-
-
   get "errors/file_not_found"
 
   get "errors/unprocessable"
@@ -53,6 +44,9 @@ Techosh::Application.routes.draw do
 	  resources :tags
     resources :tutorials do 
 	  resources :videos
+    resources :subjects
+    resources :categories
+    resources :universities
 	end
 	 
   end

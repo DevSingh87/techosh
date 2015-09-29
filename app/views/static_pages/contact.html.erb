@@ -1,9 +1,11 @@
-<div id="page-wrap">
-  <div id="static-pages">
-  <div class="container-fluid">
+<section class="content">
+				
+				<!-- BEGIN .wrapper -->
+				<div class="wrapper">
+				<div class="main-content has-sidebar">
 
-				<div class="row-fluid">
-				  <div class="span9" style="padding-right:10px;">
+						<!-- BEGIN .left-content -->
+						<div class="left-content">
 
 <h3><%= image_tag('contact.jpg') %></h3>
 <p><b>:: Feel free to contact us. ::</b></p>
@@ -30,10 +32,11 @@
 
 
 				  </div>
-				  <div class="span3" style="margin-left:-2px; margin-top:-20px;">
+				 <aside id="sidebar">
 				  <%= render partial: "sidebar" %>
 							
-				  </div>
+				  <!-- END #sidebar -->
+						</aside>
 				 </div>
 			  </div>
 			 </div>
