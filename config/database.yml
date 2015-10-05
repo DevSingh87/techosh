@@ -14,11 +14,12 @@ development:
   reconnect: false
   database: techosh_development
   pool: 5
-  username: root
-  password:
-  host: localhost
+  username: <%= ENV['DATABASE_USERNAME'] %>
+  password: <%= ENV['DATABSE_PASSWORD'] %>
+  host: mirus.webfactional.com
   port: 3306
-  socket: /opt/lampp/var/mysql/mysql.sock
+  socket: /var/lib/mysql/mysql.sock
+  #socket: /opt/lampp/var/mysql/mysql.sock
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -29,11 +30,12 @@ test:
   reconnect: false
   database: techosh_test
   pool: 5
-  username: root
-  password:
-  host: localhost
+  username: <%= ENV['DATABASE_USERNAME'] %>
+  password: <%= ENV['DATABSE_PASSWORD'] %>
+  host: mirus.webfactional.com
   port: 3306
-  socket: /opt/lampp/var/mysql/mysql.sock
+  socket: /var/lib/mysql/mysql.sock
+  #socket: /opt/lampp/var/mysql/mysql.sock
 
 production:
   adapter: mysql2
