@@ -2,7 +2,7 @@
 lock '3.4.0'
 
 set :application, 'triedge'
-    set :repo_url, 'git@github.com/TechieDev/techosh.git'
+    set :repo_url, 'git@github.com:TechieDev/techosh.git'
     set :deploy_to, '/home/mirus/webapps/tech'
     
 	set :use_sudo, false
