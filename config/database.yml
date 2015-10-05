@@ -18,7 +18,7 @@ development:
   password: <%= ENV['DATABSE_PASSWORD'] %>
   host: mirus.webfactional.com
   port: 3306
-  socket: /var/lib/mysql/mysql.sock
+  #socket: /var/lib/mysql/mysql.sock
   #socket: /opt/lampp/var/mysql/mysql.sock
 
 # Warning: The database defined as "test" will be erased and
@@ -34,7 +34,7 @@ test:
   password: <%= ENV['DATABSE_PASSWORD'] %>
   host: mirus.webfactional.com
   port: 3306
-  socket: /var/lib/mysql/mysql.sock
+  #socket: /var/lib/mysql/mysql.sock
   #socket: /opt/lampp/var/mysql/mysql.sock
 
 production:
@@ -47,5 +47,5 @@ production:
   password: <%= ENV['DATABSE_PASSWORD'] %>
   host: mirus.webfactional.com
   port: 3306
-  socket: /var/lib/mysql/mysql.sock
+  #socket: /var/lib/mysql/mysql.sock
   #socket: /opt/lampp/var/mysql/mysql.sock
