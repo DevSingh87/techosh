@@ -87,3 +87,10 @@ gem 'rails-observers'
 gem 'actionpack-page_caching'
 gem 'actionpack-action_caching'
 gem 'activerecord-deprecated_finders'
+
+#Deployment
+group :development do
+  gem 'capistrano-rails'
+  gem 'capistrano-passenger', '~> 0.0.2'
+  gem 'capistrano-bundler'
+end
