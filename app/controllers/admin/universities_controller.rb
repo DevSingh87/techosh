@@ -40,7 +40,7 @@ class Admin::UniversitiesController < ApplicationController
   # POST /universities
   # POST /universities.json
   def create
-    @university = University.new(params[:university])
+    @university = University.new(university_params)
 
     respond_to do |format|
       if @university.save
@@ -59,7 +59,7 @@ class Admin::UniversitiesController < ApplicationController
     @university = University.find(params[:id])
 
     respond_to do |format|
-      if @university.update_attributes(params[:university])
+      if @university.update_attributes(university_params)
         format.html { redirect_to @university, notice: 'University was successfully updated.' }
         format.json { head :no_content }
       else
@@ -79,5 +79,9 @@ class Admin::UniversitiesController < ApplicationController
       format.html { redirect_to universities_url }
       format.json { head :no_content }
     end
+  end
+
+  def university_params
+    params.require.permit(:name, :slug)
   end
 end

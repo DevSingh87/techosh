@@ -41,14 +41,14 @@ Techosh::Application.routes.draw do
  
   namespace :admin do
     resources :articles
-	  resources :tags
+    resources :tags
     resources :tutorials do 
-	  resources :videos
+    resources :videos
     resources :subjects
     resources :categories
     resources :universities
-	end
-	 
+  end
+   
   end
 
   # The priority is based upon order of creation:

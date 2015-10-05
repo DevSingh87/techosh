@@ -1,5 +1,5 @@
 class Article < ActiveRecord::Base
-  attr_accessible :body, :title, :tag_list
+  #attr_accessible :body, :title, :tag_list
   validates_presence_of [:body, :title]
 
   has_many :taggings, :dependent => :destroy

@@ -1,6 +1,6 @@
 class Video < ActiveRecord::Base
 	is_impressionable
-    attr_accessible :tutorial_id, :title, :video_url, :all_tags
+    #attr_accessible :tutorial_id, :title, :video_url, :all_tags
 	
 	belongs_to :tutorial
 
@@ -14,7 +14,7 @@ class Video < ActiveRecord::Base
 	          :presence => true
 	
 	extend FriendlyId
-    friendly_id :title, use: :slugged
+    friendly_id :title, use: [:slugged, :finders]
 	
 	before_validation :create_slug
     

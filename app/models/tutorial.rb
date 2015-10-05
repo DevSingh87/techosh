@@ -1,6 +1,6 @@
 class Tutorial < ActiveRecord::Base
 
-  attr_accessible :description, :title, :image_attributes, :videos_attributes, :category_id, :university_id, :subject_id, :tag_list
+  #attr_accessible :description, :title, :image_attributes, :videos_attributes, :category_id, :university_id, :subject_id, :tag_list
   
   has_many :taggings, :dependent => :destroy
     has_many :tags, through: :taggings
@@ -45,7 +45,7 @@ class Tutorial < ActiveRecord::Base
 
 
   extend FriendlyId
-  friendly_id :title, use: :slugged
+  friendly_id :title, use: [:slugged, :finders]
  
   before_validation :create_slug
   

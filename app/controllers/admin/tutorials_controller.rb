@@ -1,7 +1,7 @@
 class Admin::TutorialsController < ApplicationController
   layout "admin"
   respond_to :html
-  before_filter :authenticate_user!
+  before_action :authenticate_user!
   # GET /tutorials
   # GET /tutorials.json
   def index
@@ -21,7 +21,7 @@ class Admin::TutorialsController < ApplicationController
   def new
     @tutorial = Tutorial.new
     @tutorial.build_image
-	@tutorial.videos.build
+	  @tutorial.videos.build
     respond_with(@tutorial)
   end
 
@@ -33,7 +33,7 @@ class Admin::TutorialsController < ApplicationController
   # POST /tutorials
   # POST /tutorials.json
   def create
-    @tutorial = Tutorial.new(params[:tutorial])
+    @tutorial = Tutorial.new(tutorial_params)
 
     respond_to do |format|
       if @tutorial.save
@@ -52,7 +52,7 @@ class Admin::TutorialsController < ApplicationController
     @tutorial = Tutorial.find(params[:id])
 
     respond_to do |format|
-      if @tutorial.update_attributes(params[:tutorial])
+      if @tutorial.update_attributes(tutorial_params)
         format.html { redirect_to [:admin, @tutorial], notice: 'Tutorial was successfully updated.' }
         format.json { head :no_content }
       else
@@ -72,5 +72,9 @@ class Admin::TutorialsController < ApplicationController
       format.html { redirect_to admin_tutorials_url }
       format.json { head :no_content }
     end
+  end
+
+  def tutorial_params
+    params.require(:tutorial).permit(:description, :title, :category_id, :university_id, :subject_id, :tag_list, image_attributes: [:tutorial_id, :image, :_destroy], videos_attributes: [:tutorial_id, :title, :video_url, :all_tags, :_destroy])
   end
 end

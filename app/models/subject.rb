@@ -1,9 +1,9 @@
 class Subject < ActiveRecord::Base
-  attr_accessible :name, :slug
+  #attr_accessible :name, :slug
    has_many :tutorials
 
    extend FriendlyId
-    friendly_id :name, use: :slugged
+    friendly_id :name, use: [:slugged, :finders]
 	
 	before_validation :create_slug
 

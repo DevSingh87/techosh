@@ -33,7 +33,7 @@ class Admin::VideosController < ApplicationController
   # POST /videos.json
   def create
   tutorial = Tutorial.find(params[:tutorial_id])
-    @video = tutorial.videos.create(params[:video])
+    @video = tutorial.videos.create(video_params)
 
     respond_to do |format|
       if @video.save
@@ -53,7 +53,7 @@ class Admin::VideosController < ApplicationController
     @video = tutorial.videos.find(params[:id])
 
     respond_to do |format|
-      if @video.update_attributes(params[:video])
+      if @video.update_attributes(video_params)
         format.html { redirect_to [:admin, @video.tutorial, @video], notice: 'Video was successfully updated.' }
         format.json { head :no_content }
       else
@@ -73,5 +73,9 @@ class Admin::VideosController < ApplicationController
       format.html { redirect_to admin_tutorial_videos_url }
       format.json { head :no_content }
     end
+  end
+
+  def video_params
+    params.require(:video).permit(:tutorial_id, :title, :video_url, :all_tags)
   end
 end
