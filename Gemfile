@@ -93,4 +93,6 @@ group :development do
   gem 'capistrano-rails'
   gem 'capistrano-passenger', '~> 0.0.2'
   gem 'capistrano-bundler'
+  gem 'dotenv'
+  gem 'dotenv-deployment', require: 'dotenv/deployment'
 end

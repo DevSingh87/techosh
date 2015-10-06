@@ -100,6 +100,9 @@ GEM
       json
     domain_name (0.5.24)
       unf (>= 0.0.5, < 1.0.0)
+    dotenv (1.0.2)
+    dotenv-deployment (0.3.0)
+      dotenv (~> 1.0)
     erubis (2.7.0)
     execjs (2.6.0)
     ffi (1.9.10-x86-mingw32)
@@ -267,6 +270,8 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   devise
   disqus
+  dotenv
+  dotenv-deployment
   friendly_id (~> 5.0)
   impressionist
   jbuilder (~> 2.0)

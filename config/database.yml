@@ -14,11 +14,11 @@ development:
   reconnect: false
   database: techosh_development
   pool: 5
-  username: <%= ENV['DATABASE_USERNAME'] %>
+  username: techosh
   password: <%= ENV['DATABSE_PASSWORD'] %>
   host: mirus.webfactional.com
   port: 3306
-  #socket: /var/lib/mysql/mysql.sock
+  socket: /var/lib/mysql/mysql.sock
   #socket: /opt/lampp/var/mysql/mysql.sock
 
 # Warning: The database defined as "test" will be erased and
@@ -30,11 +30,11 @@ test:
   reconnect: false
   database: techosh_test
   pool: 5
-  username: <%= ENV['DATABASE_USERNAME'] %>
+  username: techosh
   password: <%= ENV['DATABSE_PASSWORD'] %>
   host: mirus.webfactional.com
   port: 3306
-  #socket: /var/lib/mysql/mysql.sock
+  socket: /var/lib/mysql/mysql.sock
   #socket: /opt/lampp/var/mysql/mysql.sock
 
 production:
@@ -43,9 +43,9 @@ production:
   reconnect: false
   database: techosh
   pool: 5
-  username: <%= ENV['DATABASE_USERNAME'] %>
+  username: techosh
   password: <%= ENV['DATABSE_PASSWORD'] %>
   host: mirus.webfactional.com
   port: 3306
-  #socket: /var/lib/mysql/mysql.sock
+  socket: /var/lib/mysql/mysql.sock
   #socket: /opt/lampp/var/mysql/mysql.sock

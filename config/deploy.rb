@@ -12,12 +12,15 @@ set :application, 'triedge'
 	set :default_env, {
 	    'PATH' => "#{deploy_to}/bin:$PATH",
 	    'GEM_HOME' => "#{deploy_to}/gems",
-	    'RUBYLIB' => "#{deploy_to}/lib"
+	    'RUBYLIB' => "#{deploy_to}/lib",
+	    'DATABSE_USERNAME' => "techosh",
+	    'DATABSE_PASSWORD' => "techosh2015"
 	}
 
 	set :scm, :git
 	set :scm_username, "TechieDev"
-	
+	set :stage, :production
+    set :rails_env, :production
     set :pty, true
     
     set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml')
