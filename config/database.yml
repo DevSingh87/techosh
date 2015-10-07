@@ -14,9 +14,9 @@ development:
   reconnect: false
   database: techosh_development
   pool: 5
-  username: techosh
-  password: techosh2015
-  host: mirus.webfactional.com
+  username: <%= ENV['DATABASE_USERNAME'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  host: <%= ENV['DATABASE_HOST'] %>
   port: 3306
   socket: /var/lib/mysql/mysql.sock
   #socket: /opt/lampp/var/mysql/mysql.sock
@@ -30,9 +30,9 @@ test:
   reconnect: false
   database: techosh_test
   pool: 5
-  username: techosh
-  password: techosh2015
-  host: mirus.webfactional.com
+  username: <%= ENV['DATABASE_USERNAME'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  host: <%= ENV['DATABASE_HOST'] %>
   port: 3306
   socket: /var/lib/mysql/mysql.sock
   #socket: /opt/lampp/var/mysql/mysql.sock
@@ -43,9 +43,9 @@ production:
   reconnect: false
   database: techosh
   pool: 5
-  username: techosh
-  password: techosh2015
-  host: mirus.webfactional.com
+  username: <%= ENV['DATABASE_USERNAME'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  host: <%= ENV['DATABASE_HOST'] %>
   port: 3306
   socket: /var/lib/mysql/mysql.sock
   #socket: /opt/lampp/var/mysql/mysql.sock

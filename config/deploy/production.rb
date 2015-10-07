@@ -59,9 +59,13 @@
 #     auth_methods: %w(publickey password)
 #     # password: 'please use keys'
 #   }
-
+set :stage, :production
+set :branch, "master"
 role :app, %w{mirus@web300.webfaction.com}
 role :web, %w{mirus@web300.webfaction.com}
 role :db,  %w{mirus@web300.webfaction.com}
 
 server "mirus@web300.webfaction.com", user: "mirus", roles: %w{web app db}
+
+set :deploy_to, '/home/mirus/webapps/tech'
+set :rails_env, :production

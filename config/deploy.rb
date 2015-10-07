@@ -45,7 +45,7 @@ set :application, 'triedge'
 	namespace :deploy do
 		desc 'Restart application'
 		  task :restart do
-		    on roles(:app), in: :sequence, wait: 5 do
+		    on roles(:all), in: :sequence, wait: 5 do
 		    	capture("#{deploy_to}/bin/restart")
 		      #execute "passenger-config restart-app --ignore-app-not-running #{deploy_to}"
 		  end
@@ -67,7 +67,7 @@ set :application, 'triedge'
 	  desc 'Copy files from application to shared directory'
 	  ## copy the files to the shared directories
 	  task :copy_config_files do
-	    on roles(:app) do
+	    on roles(:all) do
 	      # create dirs
 	      fetch(:config_dirs).each do |dirname|
 	        path = File.join shared_path, dirname
@@ -88,7 +88,7 @@ set :application, 'triedge'
 
 	  desc "run bundle install and ensure all gem requirements are met"
 	  task :install do
-	  	on roles(:app) do
+	  	on roles(:all) do
 	     #execute "cd ~/webapps/trainingapp2/current"
 	    # execute "cd current"
 	     #execute "bundle install"
@@ -100,6 +100,7 @@ set :application, 'triedge'
 	end
 	#before 'deploy:restart', 'bundle:install'
 	#before "deploy:finishing", "uploads:create_symlink"
+	after :deploy, "deploy:create_symlink"
     after 'deploy:finishing', 'deploy:restart'
    # after 'deploy:finishing', 'bundle:install'
     #after 'bundle:install', 'deploy:restart'
