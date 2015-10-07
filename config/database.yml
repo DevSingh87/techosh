@@ -14,7 +14,7 @@ development:
   reconnect: false
   database: techosh_development
   pool: 5
-  username: techosh
+  username: <%= ENV['DATABASE_USERNAME'] %>
   password: <%= ENV['DATABSE_PASSWORD'] %>
   host: mirus.webfactional.com
   port: 3306
@@ -30,7 +30,7 @@ test:
   reconnect: false
   database: techosh_test
   pool: 5
-  username: techosh
+  username: <%= ENV['DATABASE_USERNAME'] %>
   password: <%= ENV['DATABSE_PASSWORD'] %>
   host: mirus.webfactional.com
   port: 3306
@@ -43,7 +43,7 @@ production:
   reconnect: false
   database: techosh
   pool: 5
-  username: techosh
+  username: <%= ENV['DATABASE_USERNAME'] %>
   password: <%= ENV['DATABSE_PASSWORD'] %>
   host: mirus.webfactional.com
   port: 3306
