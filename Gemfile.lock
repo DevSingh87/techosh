@@ -138,8 +138,7 @@ GEM
     mini_portile (0.6.2)
     minitest (5.8.1)
     multi_json (1.11.2)
-    mysql2 (0.3.18)
-    mysql2 (0.3.18-x86-mingw32)
+    mysql2 (0.3.19)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.2)
@@ -277,7 +276,7 @@ DEPENDENCIES
   jquery-slimscroll-rails
   jquery-ui-rails (~> 4.2.1)
   kaminari
-  mysql2 (= 0.3.18)
+  mysql2 (~> 0.3.18)
   protected_attributes
   pry-rails
   rails (= 4.2.0)
